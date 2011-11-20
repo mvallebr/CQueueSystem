@@ -1,0 +1,1 @@
+This was the project of a message queue system based on files.It should serve as integration interface between two systems, but the company at the time (+ than 10 years ago) choose to use IBM MQ instead, after the project was already done.I am releasing it as open source now.
