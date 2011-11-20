@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<primitive>	
+	<ident>
+		<ID data_type="field" data_value="1"></ID>
+		<TIMESTAMP data_type="timestamp" data_value=""></TIMESTAMP>
+	</ident>
+	<legacy>
+		<NotifyID>10</NotifyID>               
+		<host>telesp.hi.inet</host>           
+		<schema>Solicitacao de servico</schema>
+		<user>GINSC</user>                    
+		<password>GINSC</password>	 
+	</legacy>
+	<response>
+		<UMBRAL data_type="field" data_value="600000041" field_type="datetime">20/05/2004 12:13:25</UMBRAL>
+	</response>
+	<NOTIF>
+		<URL>http://localhost:8080/IF_GINSC/test_dom2</URL>
+		<USER>GINSC</USER>
+		<PASSWORD>GINSC</PASSWORD>
+		<QUERY>
+			<SISTEMA data_type="value" data_value="SGDDR"></SISTEMA>
+			<SERVICIO data_type="value" data_value="DDR"></SERVICIO>
+			<SOLICITUD data_type="field" data_value="1" field_type="string"></SOLICITUD>
+			<TIPOSOLICITUD data_type="field" data_value="600000075"  field_type="string"></TIPOSOLICITUD>
+		</QUERY>                       
+	</NOTIF>
+		<status>
+		<type>Ok</type>
+		<message>Everything has gone fine...</message>
+	</status>	
+</primitive>

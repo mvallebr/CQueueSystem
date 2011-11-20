@@ -1,0 +1,3 @@
+#!/bin/sh
+kill -15 $(ps -e | grep ars)
+ps -e | grep ars

@@ -1,0 +1,3 @@
+- Quando uma primitiva é enviada ao pginsc mas este não está rodando, a primitiva é para errores. Ela deveria ficar em output.
+- Implementar semáforo para as duas filas de output (testar)
+- Verificar codificação das primitivas, para caracteres com acentos.

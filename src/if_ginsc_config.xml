@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<config>
+	<!--Variáveis de conexão ao servidor de notificações-->
+	<ars_notifier>
+		<host>telesp.hi.inet</host>
+		<user>GINSC</user>
+		<password>GINSC</password>		
+	</ars_notifier>
+	<ars_notifier>
+		<host>bauru.hi.inet</host>
+		<user>GINSC</user>
+		<password>GINSC</password>		
+	</ars_notifier>
+	<ars_notifier>
+		<host>barbo.hi.inet</host>
+		<user>GINSC</user>
+		<password>GINSC</password>		
+	</ars_notifier>
+	<ars_system>
+		<user>GINSC</user>
+		<password>GINSC</password>		
+	</ars_system>
+	<!--Definições para comunicação entre pddr e pginsc-->
+	<pginsc_hostname>rolando</pginsc_hostname>		
+	<pginsc_port>10000</pginsc_port>		
+	<!-- <pginsc_url>http://10.11.29.89:8080/InterfazGINSC/Pginsc</pginsc_url> -->
+	<pginsc_url>http://10.95.2.198:8081/IF_GINSC/Pginsc</pginsc_url>
+	<!-- localhost -->
+	<!-- <pginsc_url>http://localhost:8080/IF_GINSC/Pginsc</pginsc_url> -->
+	<!-- <pginsc_url>http://localhost:10000/csoapserver</pginsc_url> -->	
+	<queuefile>/tmp/if_ddr_ginsc_queue.dat</queuefile>		
+	<sql_log_filename>=/tmp/if_ddr_ginsc_sqllog.dat</sql_log_filename>		
+	<!--Arquivo de log-->
+	<general_log_filename>/tmp/if_ddr_ginscNT.log</general_log_filename>	
+	<cfg_primitives_folder>/home/mvalle/workspace/ARS_IF_GINSC/pcfg</cfg_primitives_folder>	
+	<pginsc_output_folder>/home/mvalle/workspace/ARS_IF_GINSC/poutput</pginsc_output_folder>	
+	<pginsc_error_folder>/home/mvalle/workspace/ARS_IF_GINSC/perrors</pginsc_error_folder>	
+	<ars_output_folder>/home/mvalle/workspace/ARS_IF_GINSC/aoutput</ars_output_folder>	
+	<ars_error_folder>/home/mvalle/workspace/ARS_IF_GINSC/aerrors</ars_error_folder>	
+	<!-- Other settings -->	
+	<datetime_format>%d/%m/%Y %H:%M:%S</datetime_format> <!-- How to format DATETIMEs -->
+</config>

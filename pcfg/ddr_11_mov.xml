@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<primitive>	
+	<!-- Determine the primitive file name, need to have names ID and TIMESTAMP, 
+		indicating the corresponding field parameters on ARS -->
+	<ident>
+		<id data_type="field" data_value="1"></id>
+		<timestamp data_type="timestamp" data_value=""></timestamp>
+	</ident>
+	<!-- Legacy communication settings -->
+	<legacy>
+		<!-- Notify code to monitor - always pars receive a notification with this code. it will use this xml to send data -->
+		<notifyid>11</notifyid>
+		<!-- ARS System Host (not notifier host), will be substituted by server name received on notification -->
+		<host>telesp.hi.inet</host>           
+		<!-- ARS System Schema (form) within host, will be substituted by schema name received on notification -->
+		<schema>Solicitacão de servico</schema>
+		<user>GINSC</user>                    <!-- ARS System USER  -->
+		<password>GINSC</password>	 <!-- ARS System PASSWORD  -->
+	</legacy>
+	<!-- Data itself -->
+	<request PLNAME="INSERTAR_SOLICITUD_V2">
+		<!-- On field type nodes, the value means the ARS ID -->
+		<pnum_solicitud data_type="field" data_value="1" field_type="string"></pnum_solicitud>
+		<ptipo_solicitud data_type="field" data_value="600000075"  field_type="string"></ptipo_solicitud>		
+		<presponsable data_type="field" data_value="4" field_type="string"></presponsable>
+		<prazon_social data_type="field" data_value="536870939" field_type="string"></prazon_social>
+		<pcnpj data_type="field" data_value="600000076" field_type="string"></pcnpj>
+		<pfecha_asignacion data_type="field" data_value="600000021" field_type="datetime"></pfecha_asignacion>
+		<pfecha_solicitud data_type="field" data_value="540000200" field_type="datetime"></pfecha_solicitud>
+		<pfecha_creacion data_type="field" data_value="3" field_type="datetime"></pfecha_creacion>
+		<!-- The format bellow (value when node type is timestamp) is documented in strftime function man page -->
+		<ptimestamp data_type="timestamp" data_value="%d/%m/%Y %H:%M:%S"></ptimestamp> 
+		<psistema data_type="value" data_value="SGDDR"></psistema>
+		<pservicio data_type="value" data_value="DDR"></pservicio>
+		<pestados>
+			<pedido data_type="field" data_value="600000028" field_type="string"></pedido>
+			<juntor data_type="field" data_value="536871155" field_type="string"></juntor>
+			<mxt data_type="field" data_value="536871154" field_type="string"></mxt>
+		</pestados>
+	</request>
+	<!-- How do pars expect response. PGINSC will compare the name of the tag with the name of each
+		value it receives as response from GINSC -->
+	<response>
+		<!-- campo Data Entr. Prog.1   600000041 -->
+		<sla data_type="field" data_value="600000041" field_type="sla" ini_date_id="600000021"></sla><!--  pginsc preenchera aqui com a resposta -->
+		<!-- <sla data_type="field" data_value="600000041" field_type="datetime">06/05/2004 16:50:01</sla>--><!--  pginsc preenchera aqui com a resposta --> 
+	</response>
+	<!-- Determine the notification parameters, to pginsc pass to notification servlet on ginsc -->
+	<notif>
+		<url>http://10.95.2.198:8081/GINSC/controlador?</url>  
+		<!-- <URL>http://10.95.43.247:8080/GINSC/controlador?sistema=SGOG-LPR&servicio=DDR&solicitud=HACHI-00002&tiposolicitud=DIGITALIZA%C7%C3O</URL> 		 -->
+		<!-- <URL>http://10.95.43.247:8080/GINSC/controlador?</URL> -->
+		<user>USERGINF2</user>
+		<password>USERGINF2</password>
+		<query>
+			<sistema data_type="value" data_value="SGDDR"></sistema>
+			<servicio data_type="value" data_value="DDR"></servicio>
+			<solicitud data_type="field" data_value="1" field_type="string"></solicitud>
+			<tiposolicitud data_type="field" data_value="600000075"  field_type="string"></tiposolicitud>
+		</query>                       
+	</notif>
+</primitive>
+
+
+

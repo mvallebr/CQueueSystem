@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<primitive>	
+	<!-- Determine the primitive file name, need to have names ID and TIMESTAMP, 
+		indicating the corresponding field names, on REQUEST/DATA -->
+	<ident>
+		<ID data_type="field" data_value="1"></ID>
+		<TIMESTAMP data_type="timestamp" data_value=""></TIMESTAMP>
+	</ident>
+	<!-- Legacy communication settings -->
+	<legacy>
+		<!-- Notify code to monitor - always pars receive a notification with this code. it will use this xml to send data -->
+		<NotifyID>10</NotifyID>               
+		<!-- ARS System Host (not notifier host), will be substituted by server name received on notification -->
+		<host>telesp.hi.inet</host>           
+		<!-- ARS System Schema (form) within host, will be substituted by schema name received on notification -->
+		<schema>Solicitação de serviço</schema>
+		<user>GINSC</user>                    <!-- ARS System USER  -->
+		<password>GINSC</password>	 <!-- ARS System PASSWORD  -->
+	</legacy>	
+	<!-- Data itself -->
+	<request PLNAME="PL_SOLICITUDES_INI">
+		<COD_SISTEMA data_type="value" data_value="SGDDR"></COD_SISTEMA>
+		<COD_SERVICO data_type="value" data_value="DDR"></COD_SERVICO>
+		<!-- On field type nodes, the value means the ARS ID -->
+		<NUM_SOLICITUD data_type="field" data_value="1"></NUM_SOLICITUD>
+		<TipoPedido data_type="field" data_value="600000075"></TipoPedido>
+		<StatusPedido data_type="field" data_value="600000028"></StatusPedido>
+		<StatusJuntor data_type="field" data_value="536871155"></StatusJuntor>
+		<StatusMeio data_type="field" data_value="536871154"></StatusMeio>
+		<Responsavel data_type="field" data_value="4"></Responsavel>
+		<RazaoSocial data_type="field" data_value="536870939"></RazaoSocial>
+		<CNPJ data_type="field" data_value="600000076"></CNPJ>
+		<DataAssinContr data_type="field" data_value="600000021"></DataAssinContr>
+		<DataSolicitacao data_type="field" data_value="540000200"></DataSolicitacao>
+		<DataCriacao data_type="field" data_value="3"></DataCriacao>
+		<!-- The format bellow (value when node type is timestamp) is documented in strftime function man page -->
+		<Timestamp data_type="timestamp" data_value="%d/%m/%Y %H:%M:%S"></Timestamp> 
+	</request>
+	<!-- How do pars expect response. PGINSC will compare the name of the tag with the name of each
+		value it receives as response from GINSC -->
+	<response>
+		<NovoPrazo data_type="field" data_value="3"></NovoPrazo>
+	</response>
+	<!-- Determine the notification parameters, to pginsc pass to notification servlet on ginsc -->
+	<NOTIF>
+		<URL>SGDDR</URL>
+		<USER>GINSC</USER>
+		<PASSWORD>GINSC</PASSWORD>
+	</NOTIF>
+</primitive>

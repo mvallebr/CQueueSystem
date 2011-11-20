@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Movimiento_f1 movimientoDate="2004-03-05">
+<num_solicitud>PEE-0000006</num_solicitud>
+<tipo_solicitud>PRE-VENDA</tipo_solicitud>
+<estado_pedido>VIAVEL</estado_pedido>
+<estado_juntor></estado_juntor>
+<estado_mtx></estado_mtx>
+<responsable>GMS01</responsable>
+<timestamp>2004-03-05</timestamp>
+<tratado>S</tratado>
+</Movimiento_f1>
